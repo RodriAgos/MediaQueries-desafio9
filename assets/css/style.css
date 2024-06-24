@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+
+/* main movil */
+body{
+    background-color: rgb(238, 229, 234);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    display: grid;
+    grid-template-areas: 
+    "navbar"
+    "filtro"
+    "catalogo"
+    "footer";
+    grid-template-columns: 1fr;
+    width: 100%;
+    
+}
+
+h1,h2,h3,h4{
+    font-size: 1.2em;
+}
+
+nav{
+    grid-area: navbar;
+    background-color: #efe9e1;
+    display: flex;
+    padding: 0 15px;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    ul{
+        display: none;
+    }
+    .hamburguesa{
+        padding-right: 10px;
+    }
+}
+
+.logo{    
+    img{
+        width: 25%;
+    }
+}
+
+
+header{
+    grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+main{
+    grid-area: catalogo;
+
+    .containerproductos{
+        padding: 20px;
+        gap: 10px;
+    }
+    img{
+        width: 90%;
+        padding: 10px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;      
+        border: 1px solid grey;
+        margin: 10px;
+        background-color: white;
+    }
+    .tarjeta{
+        display: grid;
+        text-align: center;
+        padding: 15px;
+        gap: 10px;       
+    }
+    button{
+        padding: 10px;
+        background-color: #efe9e1;
+        border-radius: 10px;
+        cursor: pointer;
+    }    
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    color: white;
+    background-color: rgba(126, 49, 49, 0.911);
+    padding: 15px;
+    #social-links{
+        padding: 10px;
+        margin-top: 10px;
+    }
+    
+}
+
+/* tablets */
+@media (width>= 576px){
+    body{
+        font-size: 18px;
+        grid-template-areas: 
+        "navbar navbar"
+        "filtro catalogo"
+        "filtro catalogo"
+        "footer footer";
+        grid-template-columns: 1.5fr 3fr
+    }
+    nav{
+        grid-area: navbar;
+        background-color: #efe9e1;
+        display: flex;
+        padding: 0 20px;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+            a{
+                color: black;
+            }
+        }
+        .hamburguesa{
+            display: none;
+        }
+    }
+    header{
+        grid-area: filtro;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        max-width: 500px;
+    }
+
+    .containerproductos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 90%;
+    }
+}
+
+
+/* escritorio */
+@media (width>= 992px){
+    body{
+        font-size: 20px;
+        grid-template-areas: 
+        "navbar filtro filtro"
+        "navbar catalogo catalogo"
+        "navbar catalogo catalogo"
+        "footer catalogo catalogo";
+        grid-template-columns: repeat(3, 1fr);
+        height: 100%;
+    }
+    nav{
+        grid-area: navbar;
+        background-color: #efe9e1;
+        display: flex;
+        flex-direction: column;
+        align-self:baseline;
+        justify-content: flex-start;
+        padding: 0 20px;
+        gap: 10px;
+        height: 100%;
+        border-right: 1px solid grey;
+        
+        .logo{
+            text-align: center;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            a{
+                color: black;
+            }
+        }
+            .hamburguesa{
+                display: none;
+            }
+    }
+    header{
+        grid-area: filtro;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    main{
+        grid-area: catalogo;
+        gap: 10px;
+        padding: 10px;    
+    }
+
+    .containerproductos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 90%;
+    }
+}
